@@ -1,0 +1,10 @@
+# Yubico Yubikey
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="add",\
+    ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0010|0110|0111|0120",\
+    GROUP="plugdev", MODE="0660"
+
+# Yubico U2F
+SUBSYSTEM=="hidraw", ACTION=="add",\
+    ATTRS{idVendor}=="1050",\
+    ATTRS{idProduct}=="0010|0110|0111|0120",\
+    GROUP="plugdev", MODE="0660"
