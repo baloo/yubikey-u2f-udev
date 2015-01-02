@@ -8,3 +8,12 @@ SUBSYSTEM=="hidraw", ACTION=="add",\
     ATTRS{idVendor}=="1050",\
     ATTRS{idProduct}=="0010|0110|0111|0120",\
     GROUP="plugdev", MODE="0660"
+
+# Plug-up
+SUBSYSTEM=="hidraw", ACTION=="add",\
+    ATTRS{idVendor}=="2581",\
+    ATTRS{idProduct}=="f1d0",\
+    GROUP="plugdev", MODE="0660"
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="add",\
+    ENV{ID_VENDOR_ID}=="2581", ENV{ID_MODEL_ID}=="f1d0",\
+    GROUP="plugdev", MODE="0660"
