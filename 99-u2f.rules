@@ -1,19 +1,22 @@
 # Yubico Yubikey
 SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="add",\
-    ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0010|0110|0111|0120",\
+    ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0113|0114|0115|0116|0120|0402|0403|0406|0407|0410",\
     GROUP="plugdev", MODE="0660"
 
 # Yubico U2F
 SUBSYSTEM=="hidraw", ACTION=="add",\
     ATTRS{idVendor}=="1050",\
-    ATTRS{idProduct}=="0010|0110|0111|0120",\
+    ATTRS{idProduct}=="0113|0114|0115|0116|0120|0402|0403|0406|0407|0410",\
     GROUP="plugdev", MODE="0660"
 
-# Plug-up
+# Plugup
 SUBSYSTEM=="hidraw", ACTION=="add",\
     ATTRS{idVendor}=="2581",\
     ATTRS{idProduct}=="f1d0",\
     GROUP="plugdev", MODE="0660"
-SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="add",\
-    ENV{ID_VENDOR_ID}=="2581", ENV{ID_MODEL_ID}=="f1d0",\
+
+# u2f zero
+SUBSYSTEM=="hidraw", ACTION=="add",\
+    ATTRS{idVendor}=="10c4",\
+    ATTRS{idProduct}=="8acf",\
     GROUP="plugdev", MODE="0660"
